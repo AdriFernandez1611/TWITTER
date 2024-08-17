@@ -1,0 +1,21 @@
+python -m venv .venv ---> crear entorno virtual
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser ----->habiloto la posibilidad que se active activar el entorno virtual (se usa una sola vez)
+.venv/Scripts/Activate.ps1
+para saber si funciono mevoy a esa carpeta y aparece activo el entorno virtual y se pone el nombre antes de la direccion y verde
+
+instalar django o otros paquete
+python -m pip install (nombre del paquete)
+
+
+pip install pillow -----: libreira para que django maneje imagenes
+
+
+crear estructura base del trabajo
+django-admin startproject (nombre del proyecto base) .
+
+ejecutar archivo python
+python manage.py runserver
+
+python manage.py (post) para crear una app
+
+mkdir (nimbre de la carpeta) ---> cfear capeyas
