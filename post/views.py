@@ -2,6 +2,7 @@
 from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Post
+# para que la pagia siemprre vuelva a pricipal home
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -19,6 +20,7 @@ class DetailPageView(DetailView):
 class CreatePageView(CreateView):
     model= Post
     template_name= "create.html"
+    success_url= reverse_lazy("home")
     
     fields= ["titulo", "descripcion", "autor"]
 
