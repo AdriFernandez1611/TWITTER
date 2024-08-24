@@ -7,11 +7,11 @@
 </head>
 <body>
     <form method="post">
-        <!-- funcion para formulario -->
+        
         {% csrf_token %}
 
+        <p style="color: red;">seguro que quieres borrar {{post.titulo}} </p>
         <input type="submit" value="borrar">
-
     </form>
 </body>
 </html>

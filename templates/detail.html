@@ -10,6 +10,7 @@
      <h1>{{post.titulo}}</h1>
      <p>{{object.descripcion}}</p>
 
-<a href="{% url 'delete' object.pk %}"><h1>borrar post</h1></a>
+<a href="{% url 'delete' object.pk %}"><h3>borrar</h3></a>
+<a href="{% url 'update' object.pk %}"><h3>actualizar</h3></a>
 </body>
 </html>

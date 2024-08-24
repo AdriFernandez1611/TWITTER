@@ -1,5 +1,5 @@
 # from django.shortcuts import render
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView, DetailView
 from .models import Post
 # para que la pagia siemprre vuelva a pricipal home
@@ -28,4 +28,10 @@ class DeletePageView(DeleteView):
     
     model=Post
     template_name= "delete.html"
+    success_url= reverse_lazy("home")
+    
+class UpdatePageView (UpdateView):
+    template_name="update.html"
+    model= Post
+    fields= ["titulo", "descripcion"]
     success_url= reverse_lazy("home")
