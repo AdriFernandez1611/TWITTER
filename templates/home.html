@@ -159,17 +159,17 @@
       
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">HOME </a>
+      <a class="navbar-brand" href="">HOME </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">log in</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'login' %}">log in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">sign up</a>
+            <a class="nav-link active" href="{% url 'signup' %}">sign up</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -179,23 +179,32 @@
       </div>
     </div>
   </nav>
-  
-    <h1>twitter</h1>
-<div>
-    {% for objects in post_list %}
 
-    <a href="{% url 'detail' objects.pk %}">{{objects.titulo}}</a>
- 
-    <hr>
+    <h1>TU MURO</h1>
 
-    {% endfor %}
-</div>
-<!-- boton de crear post -->
-    <div class="bg-body-tertiary p-5 rounded">
-        <a class="btn btn-lg btn-primary" href="{% url 'create' %}" role="button">crear post</a>
+<!-- post  -->
+{% for objects in post_list %}
+<div class="row" data-masonry='{"percentPosition": true }'>
+<div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        
+        <h5 class="card-title"><a href="{% url 'detail' objects.pk %}">{{objects.titulo}}</a></h5>
+        <p class="card-text" href="{% url 'detail' objects.pk %}">{{objects.descripcion}}</p>
+        <p class="card-text"><small class="text-body-secondary"> Nuevo post</small></p>
+
+      </div>
     </div>
-<!-- fin de boton -->
+  </div>
+</div>
+  {% endfor %}
+  <!-- fin del post -->
 
+   <!-- boton de crear post -->
+   <div class="bg-body-tertiary p-5 rounded">
+    <a class="btn btn-lg btn-primary" href="{% url 'create' %}" role="button">crear post</a>
+</div>
+<!-- fin de boton -->
+ 
 </body>
 </html>
-    
