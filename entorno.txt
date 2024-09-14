@@ -19,3 +19,7 @@ python manage.py runserver
 python manage.py (post) para crear una app
 
 mkdir (nimbre de la carpeta) ---> cfear capeyas
+
+pra crear txt de los lenguajes que utlizamos
+
+pip freeze > requirements.txt
